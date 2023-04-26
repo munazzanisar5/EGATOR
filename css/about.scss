@@ -1,0 +1,178 @@
+
+// @import "./style.scss";
+
+.about_achivement{
+    .about_achivement_container{
+        display: grid;
+        grid-template-columns: 40% 52%;
+        gap: 5rem;
+        .about_achievements_left{
+            
+        }
+        .about_achievements_right{
+           h1{
+            padding-bottom: 5rem;
+           }
+           .right_text{
+            margin: 0rem 0 2.5rem;
+           }
+           .achievements_cards{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            .achievement_card{
+                padding: 1.6rem;
+                border-radius: 1rem;
+                background: $color-bg1;
+                text-align: center;
+                .achievement_icon{
+                    margin-bottom: 2rem;
+                    background: $color-danger;
+                    padding: 0.6rem;
+                    text-align: center;
+                    border-radius: 1rem;
+                    font-size: 2rem;
+                }
+                h3{
+                    padding-top: 2rem;
+                }
+                p{
+                    margin-top: 1rem;
+                }
+                &:hover {
+                    background: $color-bg2;
+                    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+                }
+            }
+                
+           }
+        }
+    }
+}
+
+// team
+.team{
+    background: $color-bg1;
+    box-shadow: inset 0 3rem rgba(0, 0, 0, 0.5);
+    .team_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        .team_member{
+            padding: 2rem;
+            border: 1px solid transparent;
+            text-align: center;
+            background: $color-bg2;
+            position: relative;
+            overflow: hidden;
+            &:hover{
+                background: transparent;
+                border-color: $color-primary;
+                .team_member_social {
+                    right: 0;
+                }
+               
+            }
+            .team_member_img{
+                img{
+                    filter: saturate(0);
+                }
+                &:hover{
+                    img{
+                        filter: saturate(1);
+                    }
+                }
+            }
+            .team_member_info{
+                h4{
+                    padding: 1rem 0;
+                }
+            }
+            .team_member_social{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 6%;
+                transform: translateY(50%);
+                right: -100%;
+                border-radius: 1rem 0 0 1rem;
+                background: $color-primary;
+                box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+                transition: $transition;
+                a{
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ================ Media Queries(tablet)==================== */
+@media screen and (max-width: 1024px) {
+    .about_achivement {
+        .about_achivement_container{
+            grid-template-columns: 1fr;
+            
+        }
+    }
+
+    .team_container{
+       
+        .team_member{
+          
+        }
+    }
+    .team{
+        .team_container{
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            .team_member{
+                padding: 1rem;
+               
+               
+            }
+        }
+    }
+   
+}
+
+/* ================ Media Queries(Phone)==================== */
+@media screen and (max-width: 600px){
+    .about_achivement {
+        .about_achivement_container{
+            grid-template-columns: 1fr;
+            .about_achievements_right {
+                .achievements_cards{
+                    grid-template-columns: 1fr ;
+                }
+            }
+        }
+    }
+    .team{
+        .team_container{
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+            .team_member{
+                padding: 0;
+                .team_member_info{
+                    p{
+                        margin-bottom: 1.5rem;
+                    }
+                }
+               
+            }
+        }
+    }
+  
+    
+   
+}
