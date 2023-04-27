@@ -124,17 +124,16 @@ nav{
     .nav_container {
         display: flex;
         justify-content: space-between;
-        padding: 2rem 0;
-    
-        button {
-            display: none;
-    
-        }
+        padding: 2rem;
+    //    button{
+    //     display: none;
+    //    }
+       
     
         .menu {
             display: flex;
             align-items: center;
-            gap: 4rem;
+            // gap: 4rem;
             a {
                 padding: 0 1.9rem;
                 font-size: 0.9rem;
@@ -444,24 +443,44 @@ nav{
             display: none;
             a{
                 width: 100%;
-                height: 5.8rem;
-                background: var(--color-primary);
-                box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
-                animation: animateNAvItems 1s linear forwards ;
+                height: 4rem;
+                animation: animateNAvItems 0.6s linear forwards ;
                 transform-origin: top right;
                 opacity: 0;
                 &:nth-child(2) {
-                    animation-delay: 2s;
+                    animation-delay: 0.10s;
                 }
                 &:nth-child(3){
-                    animation-delay: 3s;
+                    animation-delay: 0.15s;
                 }
                 &:nth-child(4){
-                    animation-delay: 4s;
+                    animation-delay: 0.20s;
                 }
+                small{
+                    background: $color-primary;
+                    box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    place-items: center;
+                    &:hover{
+                        background: $color-bg2;
+                        color: $color-white;
+    }
+    }
             }
         }
         
+    }
+
+    @keyframes animateNAvItems {
+       0%{
+        transform: rotateZ('-90deg');
+       }
+       100%{
+        transform: rotateZ(0);
+        opacity: 1;
+       }
     }
 }
 
@@ -469,6 +488,7 @@ nav{
 @media screen and (max-width: 600px) {
    
     .nav_container {
+       
         .menu {
             right: 3%;
         }

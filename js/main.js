@@ -24,6 +24,22 @@ faqs.forEach(faq=>{
 })
 
 
+// media query match
+let phone=window.matchMedia("(max-width: 600px)");
+let open=document.querySelector(".open_b");
+let close=document.querySelector(".close_b");
+function myfunction(){
+if(phone.matchMedia){
+open.style.display="block"
+close.style.display="block"
+}
+else{
+    open.style.display="none"
+close.style.display="none"
+}
+}
+myfunction();
+
 // show/hide nav menu
 const menu =document.querySelector(".menu");
 const menuBtn =document.querySelector("#open_menu_btn");
